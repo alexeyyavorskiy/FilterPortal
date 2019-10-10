@@ -1,16 +1,7 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChange,
-  SimpleChanges
-} from '@angular/core';
-import { GlobalService } from "../../core/global.service";
-import { DataObject } from "../../classes/data-object";
-import { FilterParams } from "../../classes/filter-params";
+import {Component, ElementRef, HostListener, Input, OnChanges, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import {GlobalService} from "../../core/global.service";
+import {DataObject} from "../../classes/data-object";
+import {FilterParams} from "../../classes/filter-params";
 
 @Component({
   selector: 'app-filter',

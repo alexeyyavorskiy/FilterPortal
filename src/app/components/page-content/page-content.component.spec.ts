@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PageContentComponent } from './page-content.component';
+import {PageContentComponent} from './page-content.component';
 
 describe('PageContentComponent', () => {
   let component: PageContentComponent;

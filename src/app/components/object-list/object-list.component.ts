@@ -1,15 +1,6 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChange,
-  SimpleChanges
-} from '@angular/core';
-import { FormGroup } from "@angular/forms";
-import { DataService } from './../../share/data.service';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges} from '@angular/core';
+import {FormGroup} from "@angular/forms";
+import {DataService} from './../../share/data.service';
 
 @Component({
   selector: 'app-object-list',

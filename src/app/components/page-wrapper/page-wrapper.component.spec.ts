@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PageWrapperComponent } from './page-wrapper.component';
+import {PageWrapperComponent} from './page-wrapper.component';
 
 describe('PageWrapperComponent', () => {
   let component: PageWrapperComponent;

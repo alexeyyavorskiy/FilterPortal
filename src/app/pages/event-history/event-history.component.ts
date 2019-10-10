@@ -1,12 +1,8 @@
-import {
-  Component,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
-import { DataService } from "../../share/data.service";
-import { EventObject } from "../../classes/event-object";
-import { GlobalService } from "../../core/global.service";
-import { Subscription } from "rxjs/Subscription";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {DataService} from "../../share/data.service";
+import {EventObject} from "../../classes/event-object";
+import {GlobalService} from "../../core/global.service";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-event-history',

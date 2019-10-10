@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ObjectListComponent } from './object-list.component';
+import {ObjectListComponent} from './object-list.component';
 
 describe('ObjectListComponent', () => {
   let component: ObjectListComponent;

@@ -1,21 +1,10 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChange,
-  SimpleChanges
-} from '@angular/core';
-import { DataService } from "../../share/data.service";
-import { GlobalService } from "../../core/global.service";
-import { ChartItem } from "../../classes/chart-item";
-import { ChartObject } from "../../classes/chart-object";
-import {
-  LangChangeEvent,
-  TranslateService
-} from "ng2-translate";
-import { Subscription } from "rxjs/Subscription";
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import {DataService} from "../../share/data.service";
+import {GlobalService} from "../../core/global.service";
+import {ChartItem} from "../../classes/chart-item";
+import {ChartObject} from "../../classes/chart-object";
+import {LangChangeEvent, TranslateService} from "ng2-translate";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-chart',

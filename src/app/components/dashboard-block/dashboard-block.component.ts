@@ -1,19 +1,11 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChange,
-  SimpleChanges
-} from '@angular/core';
-import { DataObject } from "../../classes/data-object";
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { NgbdModalContentComponent } from '../modal/modal.component';
-import { DashboardBlockParams } from "../../classes/dashboard-block-params";
-import { DataService } from '../../share/data.service';
-import { FormGroup } from "@angular/forms";
-import { GlobalService } from "../../core/global.service";
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import {DataObject} from "../../classes/data-object";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbdModalContentComponent} from '../modal/modal.component';
+import {DashboardBlockParams} from "../../classes/dashboard-block-params";
+import {DataService} from '../../share/data.service';
+import {FormGroup} from "@angular/forms";
+import {GlobalService} from "../../core/global.service";
 
 @Component({
   selector: 'app-dashboard-block',

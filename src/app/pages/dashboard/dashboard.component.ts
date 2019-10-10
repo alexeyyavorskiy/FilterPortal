@@ -1,8 +1,4 @@
-import {
-  Component,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GlobalService} from "../../core/global.service";
 import {DataService} from "../../share/data.service";
 import {Subscription} from "rxjs/Subscription";

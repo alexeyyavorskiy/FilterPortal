@@ -1,15 +1,6 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChange,
-  SimpleChanges
-} from '@angular/core';
-import { DataObject } from "../../classes/data-object";
-import { Subscription } from "rxjs/Subscription";
+import {Component, ElementRef, HostListener, Input, OnChanges, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import {DataObject} from "../../classes/data-object";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-gas-filter',

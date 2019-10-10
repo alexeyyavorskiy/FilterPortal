@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgbdModalContentComponent } from './modal.component';
+import {NgbdModalContentComponent} from './modal.component';
 
 describe('ModalComponent', () => {
   let component: NgbdModalContentComponent;

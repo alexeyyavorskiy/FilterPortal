@@ -1,15 +1,6 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChange,
-  SimpleChanges
-} from '@angular/core';
-import { DataObject } from "../../classes/data-object";
-import { GlobalService } from "../../core/global.service";
+import {Component, ElementRef, HostListener, Input, OnChanges, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import {DataObject} from "../../classes/data-object";
+import {GlobalService} from "../../core/global.service";
 
 @Component({
   selector: 'app-status',

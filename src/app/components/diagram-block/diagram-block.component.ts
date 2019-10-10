@@ -1,13 +1,6 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChange,
-  SimpleChanges
-} from '@angular/core';
-import { DataObject } from "../../classes/data-object";
-import { FilterParams } from "../../classes/filter-params";
+import {Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import {DataObject} from "../../classes/data-object";
+import {FilterParams} from "../../classes/filter-params";
 
 @Component({
   selector: 'app-diagram-block',

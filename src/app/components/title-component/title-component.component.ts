@@ -1,11 +1,7 @@
-import {
-  Component,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
-import { AuthService } from "../../share/auth.service";
-import { GlobalService } from "../../core/global.service";
-import { Subscription } from "rxjs/Subscription";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AuthService} from "../../share/auth.service";
+import {GlobalService} from "../../core/global.service";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-title-component',

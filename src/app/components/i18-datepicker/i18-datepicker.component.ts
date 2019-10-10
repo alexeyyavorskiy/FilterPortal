@@ -1,11 +1,6 @@
-import {
-  Component,
-  EventEmitter,
-  Injectable,
-  Output
-} from '@angular/core';
-import { NgbDatepickerI18n } from "@ng-bootstrap/ng-bootstrap";
-import { TranslateService } from "ng2-translate";
+import {Component, EventEmitter, Injectable, Output} from '@angular/core';
+import {NgbDatepickerI18n} from "@ng-bootstrap/ng-bootstrap";
+import {TranslateService} from "ng2-translate";
 
 const I18N_VALUES = {
   'ger': {

@@ -1,13 +1,9 @@
-import {
-  Component,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
-import { DataObject } from "../../classes/data-object";
-import { DataService } from "../../share/data.service";
-import { Subscription } from "rxjs/Subscription";
-import { DashboardBlockParams } from "../../classes/dashboard-block-params";
-import { GlobalService } from "../../core/global.service";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {DataObject} from "../../classes/data-object";
+import {DataService} from "../../share/data.service";
+import {Subscription} from "rxjs/Subscription";
+import {DashboardBlockParams} from "../../classes/dashboard-block-params";
+import {GlobalService} from "../../core/global.service";
 
 @Component({
   selector: 'app-edit-network',

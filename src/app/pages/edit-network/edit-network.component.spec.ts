@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { EditNetworkComponent } from './edit-network.component';
+import {EditNetworkComponent} from './edit-network.component';
 
 describe('EditNetworkComponent', () => {
   let component: EditNetworkComponent;

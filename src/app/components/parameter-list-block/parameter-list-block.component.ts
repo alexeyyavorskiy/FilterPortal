@@ -1,15 +1,8 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChange,
-  SimpleChanges
-} from '@angular/core';
-import { DataService } from '../../share/data.service';
-import { FormGroup } from "@angular/forms";
-import { ParameterListBlockObject } from "../../classes/parameter-list-block-object";
-import { GlobalService } from "../../core/global.service";
+import {Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import {DataService} from '../../share/data.service';
+import {FormGroup} from "@angular/forms";
+import {ParameterListBlockObject} from "../../classes/parameter-list-block-object";
+import {GlobalService} from "../../core/global.service";
 
 @Component({
   selector: 'app-parameter-list-block',

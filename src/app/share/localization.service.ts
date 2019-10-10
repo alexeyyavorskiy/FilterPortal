@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { TranslateService } from 'ng2-translate';
-import { Subject } from 'rxjs/Subject';
+import {Injectable} from '@angular/core';
+import {TranslateService} from 'ng2-translate';
+import {Subject} from 'rxjs/Subject';
 
 /**
  * Global localization service based on ng2-translate.

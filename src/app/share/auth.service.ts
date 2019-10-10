@@ -1,10 +1,7 @@
-import { Injectable } from '@angular/core';
-import {
-  Http,
-  Response
-} from "@angular/http";
-import { DataService } from "./data.service";
-import { Subject } from "rxjs/Subject";
+import {Injectable} from '@angular/core';
+import {Http, Response} from "@angular/http";
+import {DataService} from "./data.service";
+import {Subject} from "rxjs/Subject";
 
 @Injectable()
 export class AuthService {

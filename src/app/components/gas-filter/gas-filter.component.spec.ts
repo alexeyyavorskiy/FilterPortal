@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GasFilterComponent } from './gas-filter.component';
+import {GasFilterComponent} from './gas-filter.component';
 
 describe('GasFilterComponent', () => {
   let component: GasFilterComponent;

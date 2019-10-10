@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TitleComponentComponent } from './title-component.component';
+import {TitleComponentComponent} from './title-component.component';
 
 describe('TitleComponentComponent', () => {
   let component: TitleComponentComponent;

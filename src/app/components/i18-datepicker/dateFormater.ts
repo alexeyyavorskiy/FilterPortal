@@ -1,7 +1,4 @@
-import {
-  NgbDateParserFormatter,
-  NgbDateStruct
-} from "@ng-bootstrap/ng-bootstrap";
+import {NgbDateParserFormatter, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 
 export class CustomDateParserFormatter extends NgbDateParserFormatter {
     parse(value: string): NgbDateStruct {

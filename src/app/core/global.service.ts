@@ -1,10 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Subject } from "rxjs/Subject";
-import { DataObject } from "../classes/data-object";
-import {
-  FormControl,
-  Validators
-} from "@angular/forms";
+import {Injectable} from '@angular/core';
+import {Subject} from "rxjs/Subject";
+import {DataObject} from "../classes/data-object";
+import {FormControl, Validators} from "@angular/forms";
 
 @Injectable()
 export class GlobalService {

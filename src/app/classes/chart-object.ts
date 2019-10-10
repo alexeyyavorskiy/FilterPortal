@@ -1,4 +1,4 @@
-import { ChartItem } from "./chart-item";
+import {ChartItem} from "./chart-item";
 
 export class ChartObject {
 

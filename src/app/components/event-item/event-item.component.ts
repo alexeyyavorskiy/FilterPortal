@@ -1,10 +1,6 @@
-import {
-  Component,
-  Input,
-  OnInit
-} from '@angular/core';
-import { EventObject } from "../../classes/event-object";
-import { GlobalService } from "../../core/global.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {EventObject} from "../../classes/event-object";
+import {GlobalService} from "../../core/global.service";
 
 @Component({
   selector: 'app-event-item',

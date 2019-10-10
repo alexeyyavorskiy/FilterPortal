@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
+import {Injectable, OnDestroy, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {DataObject} from "../classes/data-object";

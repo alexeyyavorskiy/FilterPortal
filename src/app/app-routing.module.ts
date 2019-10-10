@@ -1,18 +1,12 @@
-import { NgModule } from '@angular/core';
-import {
-  RouterModule,
-  Routes
-} from '@angular/router';
-import { DashboardComponent } from "./pages/dashboard/dashboard.component";
-import { EditNetworkComponent } from "./pages/edit-network/edit-network.component";
-import { EventHistoryComponent } from "./pages/event-history/event-history.component";
-import { ParameterListComponent } from "./pages/parameter-list/parameter-list.component";
-import { LoginFormComponent } from './pages/login/login-form/login-form.component';
-import { ErrorComponent } from './pages/error/error.component';
-import {
-  AuthGuard,
-  LoginGuard
-} from './auth.guard';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {EditNetworkComponent} from "./pages/edit-network/edit-network.component";
+import {EventHistoryComponent} from "./pages/event-history/event-history.component";
+import {ParameterListComponent} from "./pages/parameter-list/parameter-list.component";
+import {LoginFormComponent} from './pages/login/login-form/login-form.component';
+import {ErrorComponent} from './pages/error/error.component';
+import {AuthGuard, LoginGuard} from './auth.guard';
 
 const appRoutes: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGuard]},

@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DiagramBlockComponent } from './diagram-block.component';
+import {DiagramBlockComponent} from './diagram-block.component';
 
 describe('DiagramBlockComponent', () => {
   let component: DiagramBlockComponent;

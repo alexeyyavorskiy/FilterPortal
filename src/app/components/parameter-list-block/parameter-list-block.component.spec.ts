@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ParameterListBlockComponent } from './parameter-list-block.component';
+import {ParameterListBlockComponent} from './parameter-list-block.component';
 
 describe('ParameterListBlockComponent', () => {
   let component: ParameterListBlockComponent;

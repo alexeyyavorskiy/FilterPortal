@@ -1,14 +1,10 @@
-import {
-  Component,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DataService} from "../../share/data.service";
 import {GlobalService} from "../../core/global.service";
 import {LocalizationService} from "../../share/localization.service";
 import {AuthService} from "../../share/auth.service";
 import {Subscription} from "rxjs/Subscription";
-import {Data, Router} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',

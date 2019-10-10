@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ObjectValueComponent } from './object-value.component';
+import {ObjectValueComponent} from './object-value.component';
 
 describe('ObjectValueComponent', () => {
   let component: ObjectValueComponent;

@@ -1,4 +1,4 @@
-import { AppPage } from './app.po';
+import {AppPage} from './app.po';
 
 describe('ult-ng4 App', () => {
   let page: AppPage;

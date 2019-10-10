@@ -1,8 +1,4 @@
-import {
-  Component,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from "rxjs/Subscription";
 import {DataObject} from "../../classes/data-object";
 import {DataService} from "../../share/data.service";

@@ -1,10 +1,6 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { I18DatepickerComponent } from './i18-datepicker.component';
+import {I18DatepickerComponent} from './i18-datepicker.component';
 
 describe('I18DatepickerComponent', () => {
   let component: I18DatepickerComponent;
