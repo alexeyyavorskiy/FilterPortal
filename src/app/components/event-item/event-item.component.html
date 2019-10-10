@@ -1,0 +1,6 @@
+<div class="group-parameter">
+  <span class="group-parameter__name">{{event.object | translate}}</span>
+  <span class="group-parameter__date">{{globalService.getYearFromTimestamp(event.timestamp)}} {{globalService.getMonthFromTimestamp(event.timestamp) | translate}}
+    {{globalService.getDayHourMinFromTimestamp(event.timestamp)}}</span>
+  <span class="group-parameter__warning" [ngClass]="typeClass"></span>
+</div>

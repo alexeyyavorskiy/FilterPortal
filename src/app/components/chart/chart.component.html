@@ -1,0 +1,10 @@
+<div class="object-chart">
+  <span class="chart-status" [ngClass]="[warningClass, colorClass]">{{ value }}% </span>
+  <ngx-charts-line-chart *ngIf="data"
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="data"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis">
+  </ngx-charts-line-chart>
+</div>

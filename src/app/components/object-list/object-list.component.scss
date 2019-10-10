@@ -1,0 +1,25 @@
+@import '../../variables';
+
+:host {
+  display: block;
+  flex: 1;
+    .hide {
+        display: none;
+    }
+}
+
+.parameter--green {
+    background-color: $green;
+}
+
+.parameter--yellow {
+    background-color: $yellow;
+}
+
+.parameter--red {
+    background-color: $red;
+}
+
+.parameter--blue {
+    background-color: $ult-blue-40;
+}

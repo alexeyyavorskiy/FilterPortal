@@ -1,0 +1,11 @@
+<section class="diagram">
+
+  <app-status [object]="status" [size]="100" class="diagram-bg"></app-status>
+  <app-filter [object]="preFilter" *ngIf="preFilterValue > 0" [params]="preFilterParams" class="diagram-bg"></app-filter>
+  <app-filter [object]="mainFilter" *ngIf="mainFilterValue > 0" [params]="mainFilterParams" class="diagram-bg"></app-filter>
+  <app-gas-filter [objects]="gasFilterList" *ngIf="gasFilterValue > 0" [size]="100" class="diagram-bg"></app-gas-filter>
+  <app-range class="diagram-bg" [value]="sliderValue" [sliderObject]="sliderObject"
+             [sliderRemoteObject]="sliderRemoteObject" [toggleObject]="toggleObject">
+  </app-range>
+
+</section>

@@ -1,0 +1,6 @@
+<app-diagram-block class="dashboard__item" [objects]="diagramObjectList"></app-diagram-block>
+<app-dashboard-block class="dashboard__item" [objects]="filtrationUnitList" [params]="filtrationUnitParams"></app-dashboard-block>
+<app-dashboard-block class="dashboard__item" [objects]="blowerList" [params]="blowerParams"></app-dashboard-block>
+<app-dashboard-block class="dashboard__item" *ngIf="preFilterValue > 0" [objects]="preFilterList" [params]="preFilterParams"></app-dashboard-block>
+<app-dashboard-block class="dashboard__item" *ngIf="mainFilterValue > 0" [objects]="mainFilterList" [params]="mainFilterParams"></app-dashboard-block>
+<app-dashboard-block class="dashboard__item" *ngIf="gasFilterValue > 0" [objects]="gasFilterList" [params]="gasFilterParams"></app-dashboard-block>

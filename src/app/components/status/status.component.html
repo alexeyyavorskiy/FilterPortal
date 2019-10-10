@@ -1,0 +1,21 @@
+<section class="status">
+
+  <h2 class="status__title" [ngClass]="titleClass">{{"Status" | translate}}</h2>
+
+  <!--<div class="status__warning">suction pressure too low</div>-->
+
+  <svg [ngStyle]="{'transform': 'scale(' + scale + ')'}" class="status__diagramm" id="svg" attr.width="{{size}}" attr.height="{{size}}" viewPort="0 0 55 55" version="1.1"
+       xmlns="http://www.w3.org/2000/svg">
+    <circle attr.r="{{r}}" attr.cx="{{size/2}}" attr.cy="{{size/2}}" fill="transparent" stroke-dasharray="2" attr.stroke="{{color15}}" stroke-dashoffset="0"></circle>
+    <circle attr.r="{{r/1.351}}" attr.cx="{{size/2}}" attr.cy="{{size/2}}" attr.stroke="{{color}}" fill="white" *ngIf="status!= 4"></circle>
+    <circle attr.r="{{r/1.351}}" attr.cx="{{size/2}}" attr.cy="{{size/2}}" fill="white" *ngIf="status === 4">
+      <animate attributeType="XML"
+               attributeName="stroke"
+               values="rgba(237, 144, 161, 1);rgba(237, 144, 161, 0.2);rgba(237, 144, 161, 1);rgba(237, 144, 161, 1)"
+               dur="1.5s"
+               repeatCount="indefinite"/>
+    </circle>
+    <rect x="47%" y="31%" width="7%" height="15%" rx="4" rg="4" attr.fill="{{color15}}"/>
+  </svg>
+
+</section>

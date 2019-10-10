@@ -1,0 +1,191 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: block;
+}
+
+.object-row {
+  display: flex;
+  font-family:'corpid-reg', sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  padding-top: 6px;
+  border-bottom: 1px solid $ult-blue-40;
+  color: $ult-blue-40;
+
+  &--writable {
+    background-color: $ult-blue-20;
+    color: $ult-blue-100;
+    border-bottom: 1px solid #fff;
+  }
+
+  &--focused {
+    background-color: $ult-blue-100;
+    color: #fff;
+  }
+
+  &__title {
+    width: calc(50% - 5px);
+    line-height: 18px;
+    margin-right: 5px;
+    padding-left: 6px;
+  }
+
+  &__parameter {
+    width: calc(45% - 5px);
+    margin-right: 5px;
+    align-self: flex-end;
+  }
+
+  &__parameter {
+    color: $ult-blue-100;
+  }
+
+  &__value {
+    width: 100%;
+    font-family:'corpid-bold', sans-serif;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__edit {
+    width: 5%;
+    color: $ult-blue-40;
+    transition: color .3s ease;
+    align-self: flex-end;
+    a {
+      display: block;
+      line-height: 1.5;
+    }
+    &:hover {
+      color: $ult-blue-80;
+    }
+  }
+
+  &__slide {
+    margin-left: auto;
+    /deep/ .mat-slide-toggle {
+      height: 18px;
+      line-height: 18px;
+    }
+
+    &--disabled {
+      opacity: .5;
+    }
+  }
+
+  @media screen and (max-width: $break_sm) {
+
+    &__title {
+      width: calc(60% - 5px);
+    }
+
+    &__parameter {
+      width: calc(35% - 5px);
+    }
+
+  }
+
+  @media screen and (max-width: $break_xs) {
+    flex-wrap: wrap;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &__title {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &__parameter {
+      width: calc(90% - 5px);
+      padding-left: 6px;
+    }
+
+    &__edit {
+      width: 10%;
+    }
+
+  }
+
+}
+
+.control-group {
+  width: 50%;
+  position: relative;
+
+  @media screen and (max-width: $break-sm) {
+    width: 40%;
+  }
+
+  @media screen and (max-width: $break-xs) {
+    width: 100%;
+    padding-left: 6px;
+  }
+}
+
+.error-messages {
+  position: absolute;
+  right: 5px;
+
+  &__required {
+    color: rgba($red, .7);
+    font-size: 10px;
+    font-style: italic;
+
+    &--focused {
+      color: rgba(#fff, .6);
+    }
+  }
+}
+
+.value {
+  &--writable {
+    color: $ult-blue-100;
+  }
+
+  &--focused {
+    color: #fff;
+  }
+}
+
+.txt--hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.range__toggle-slide {
+  height: 14px;
+  line-height: 14px;
+  /deep/ .mat-slide-toggle-thumb {
+    background-color: #fff !important;
+    border: 1px solid $ult-blue-100;
+    width: 14px;
+    height: 14px;
+  }
+
+  /deep/ .mat-slide-toggle-thumb-container {
+    width: 14px;
+    height: 14px;
+    top: 0;
+  }
+
+  /deep/ .mat-slide-toggle-bar {
+    background-color: rgba($ult-blue-100, .7);
+    width: 30px;
+    margin-right: 0;
+  }
+
+  /deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: $ult-blue-100;
+  }
+
+  /deep/ .mat-slide-toggle-ripple.mat-ripple {
+    display: none;
+  }
+}

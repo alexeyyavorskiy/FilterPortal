@@ -1,0 +1,34 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: block;
+}
+
+.diagram {
+  display: flex;
+  flex-wrap: wrap;
+
+  // flex-direction: column;
+  // justify-content: space-between;
+  height: 100%;
+  // background-color: transparent;
+}
+
+
+// diagrams
+.diagram-bg {
+  background-color: #fff;
+  flex: 1 1 100%;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  @media screen and (max-width: $break_sm) {
+    min-height: 80px;
+  }
+
+}

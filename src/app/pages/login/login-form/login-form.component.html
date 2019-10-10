@@ -1,0 +1,40 @@
+<div class="logo">
+  <img src="assets/images/ult_logo_invers.png" alt="ULT - UMWELT-LUFTTECHNIK"/>
+</div>
+
+
+<div class="panel-body">
+  <form class="form" [formGroup]="form" (ngSubmit)="submitForm(form.value)">
+
+    <div class="control-group">
+
+      <div class="error-messages">
+        <div *ngIf="form.controls['name'].hasError('required') && !form.controls['name'].pristine" class="error input-error">
+          {{'Name is required' | translate}} *
+        </div>
+      </div>
+
+      <input name="name" type="text" id="name" [(ngModel)]="user.n" class="form__input" [formControl]="form.controls['name']" autocomplete="off" required placeholder="{{'User' | translate}}"/>
+
+    </div>
+
+    <div class="control-group">
+      <div class="error-messages">
+        <div *ngIf="form.controls['password'].hasError('required') && !form.controls['password'].pristine" class="error input-error">
+          {{'Password is required' | translate}} *
+        </div>
+      </div>
+
+      <input name="password" type="password" id="password" [(ngModel)]="user.p" class="form__input" [formControl]="form.controls['password']" placeholder="{{'Password' | translate}}" autocomplete="off" required/>
+
+    </div>
+    <span class="form__forgot"><a href="#forgot">{{"Forgot password?" | translate }}</a></span>
+    <button class="form__btn" [disabled]="!form.valid" type="submit">{{'Login' | translate}}</button>
+    <div class="error-messages">
+      <div *ngIf="showMessage" class="alert-danger" [ngClass]="class">
+        {{message | translate}}
+      </div>
+    </div>
+  </form>
+  <!--<form class="form-horizontal" [formGroup]="form" (ngSubmit)="submitForm(form.value)"></form>-->
+</div>

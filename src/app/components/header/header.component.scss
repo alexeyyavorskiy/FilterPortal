@@ -1,0 +1,593 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: block;
+  position: relative;
+  max-height: 40px;
+}
+
+/*styles for login page start*/
+.login-page {
+
+  .nav {
+    display: block;
+    color: #fff;
+    border-top: none;
+
+
+    &__item:hover {
+      color: rgba(#fff, .7);
+    }
+
+    &__client::before {
+      border-left-color: #fff;
+    }
+
+    &__language::after {
+      border-top-color: #fff;
+    }
+
+    &__address {
+      display: none;
+    }
+
+    &__client {
+      color: #fff;
+    }
+
+    .user-menu,
+    .language-menu {
+      border: none;
+      box-shadow: none;
+    }
+
+    /deep/ app-aside-nav {
+      display: none;
+    }
+  }
+
+  .header--mobile {
+
+    .title-component--mobile,
+    .hamburger,
+    .logo {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $break-sm) {
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    .nav {
+      position: initial;
+      padding: 20px 18px 0;
+      overflow-y: initial;
+
+      &__client {
+        padding-left: 16px;
+      }
+
+      &__user--mobile {
+        padding-right: 0;
+      }
+    }
+  }
+}
+/*styles for login page end*/
+
+
+.header {
+  line-height: 60px;
+  font-size: .875em;
+  background-color: transparent;
+}
+
+
+.nav {
+  display: block;
+  line-height: 40px;
+  text-align: right;
+  color: $ult-blue-100;
+
+  &__item-wrap {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__item {
+    text-align: center;
+    transition: all .3s ease;
+    display: block;
+    &:hover {
+      color: rgba($ult-blue-100, .7);
+    }
+
+  }
+
+  &__client {
+    position: relative;
+    padding-right: 16px;
+    padding-left: 16px;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-left-color: $ult-blue-100;
+      transition: all .3s ease;
+      vertical-align: middle;
+    }
+    &:hover {
+      &::before {
+        opacity: .7;
+      }
+    }
+
+  }
+
+  &__language {
+    position: relative;
+    min-width: 62px;
+    text-transform: capitalize;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-top-color: $ult-blue-100;
+      border-bottom: 0;
+      transition: all .3s ease;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    &:hover {
+      &::after {
+        opacity: .7;
+      }
+    }
+  }
+
+  &__user {
+    min-width: 76px;
+    text-align: center;
+
+    &::after {
+      content: '\f011';
+      font-family: 'font-awesome';
+      display: inline-block;
+      margin-left: 6px;
+      border: 0;
+      vertical-align: baseline;
+    }
+  }
+
+  &__address {
+    order: 2;
+    display: none;
+    text-align: left;
+    color: #fff;
+    font-style: normal;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    &-item {
+      display: block;
+      font-size: .7em;
+      line-height: 1.7;
+      transition: all .3s ease;
+      a:hover,
+      a:focus {
+        text-decoration: underline;
+        color: $ult-blue-10;
+      }
+    }
+  }
+}
+
+
+.show {
+  .nav__language{
+    background-color: $ult-blue-100;
+    color: #fff;
+    &::after {
+      transition: all .3s ease;
+      border: 6px solid transparent;
+      border-top: 0;
+      border-bottom-color: #fff;
+    }
+  }
+  .nav__language,
+  .nav__user {
+    background-color: $ult-blue-100;
+    color: #fff;
+    transition: color .3s ease;
+    &:hover {
+      color: rgba(#fff, .7);
+    }
+  }
+}
+
+.show > .language-menu,
+.show > .user-menu {
+  display: block;
+}
+
+.language-menu,
+.user-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: $ult-blue-100;
+
+
+  &__item {
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    outline: none;
+    color: #fff;
+    text-transform: capitalize;
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+    position: relative;
+    transition: color .3s ease;
+
+    &:first-child {
+      border-top: 1px solid #fff;
+    }
+
+    &:not(:last-child)::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      right: 15%;
+      height: 1px;
+      background-color: #fff;
+    }
+
+    &:hover {
+      color: rgba(#fff, .5);
+    }
+
+    &--active {
+      color: rgba(#fff, .5);
+    }
+  }
+}
+
+.language-menu__item {
+  min-width: 62px;
+}
+
+.user-menu__item {
+  min-width: 76px;
+}
+
+.current-language {
+  color: $ult-blue-30;
+}
+
+
+/*styles for mobile version start*/
+.header--mobile {
+  display: none;
+  padding-left: 18px;
+  padding-right: 18px;
+
+  .logo {
+    height: 30px;
+    width: 60px;
+    background-image: url('../../../assets/images/ult-logo_blau_sm.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+  }
+
+  /deep/ .title-component-wrap {
+    background-color: transparent;
+  }
+
+  @media screen and (max-width: $break_sm) {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: #fff;
+  }
+}
+
+.nav  {
+
+  &__user--mobile {
+    display: inline-block;
+  }
+
+  /deep/ .aside {
+
+    &__logo {
+      display: none;
+    }
+
+    &__nav {
+      margin: 0;
+      text-align: left;
+      display: none;
+    }
+
+  }
+
+  /deep/ app-aside-nav {
+    flex: initial;
+    min-height: 42px;
+    display: none;
+  }
+
+  /deep/.menu__item {
+
+    border-bottom: 1px solid #fff;
+
+    &:first-child {
+      border-top: 1px solid #fff;
+    }
+
+    a {
+      padding-left: 50px;
+      color: #fff;
+    }
+
+  }
+
+  /deep/.menu__item a.active {
+    color: $ult-blue-40 !important;
+    &::before {
+      display: none !important;
+
+    }
+  }
+
+
+  @media screen and (max-width: $break_sm) {
+    display: none;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $ult-blue-100;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid #fff;
+
+    /deep/ app-aside-nav {
+      display: flex;
+    }
+
+    &__client--mobile {
+      order: 1;
+    }
+
+    &__client {
+      text-align: left;
+      padding-left: 50px;
+    }
+
+    &__user--mobile {
+      padding-right: 20px;
+    }
+
+    /deep/ .aside__nav,
+    &__address {
+      display: block;
+    }
+
+    &__user,
+    &__language {
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &__language::after {
+      border-top-color: #fff ;
+    }
+
+    &__client {
+      color: $ult-blue-40;
+
+      &:hover {
+        color: $ult-blue-40;
+      }
+
+      &::before {
+        border-left-color: $ult-blue-40;
+      }
+
+    }
+
+    &--mobile {
+      display: flex;
+    }
+
+    .user-menu,
+    .language-menu {
+      border: 1px solid #fff;
+      border-top: none;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    }
+  }
+
+  @media (max-width: $break_sm) and (orientation: landscape) {
+
+    flex-wrap: nowrap;
+    overflow-y: auto;
+
+    /deep/ .menu {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+
+      &__item {
+
+        border: none;
+
+        &:first-child {
+          border: none;
+        }
+
+
+        a {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $break-sm) {
+  //STATUSES
+  .header--red  {
+    background-color: $red;
+  }
+
+  .header--yellow  {
+    background-color: $yellow;
+  }
+
+  .header--red,
+  .header--yellow {
+
+    .hamburger-inner {
+      &,
+      &::before,
+      &::after {
+        background-color: #fff;
+      }
+    }
+
+    /deep/ .title-component-wrap {
+      color: #fff;
+    }
+
+    .logo {
+      background-image: url('../../../assets/images/ult_logo_invers_sm.png');
+    }
+  }
+}
+
+
+.hamburger {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  padding: 20px 0;
+
+  &:hover &-box,
+  &:focus &-box {
+    opacity: .7;
+  }
+  &-box {
+    position: relative;
+    width: 28px;
+    height: 17px;
+  }
+  &-inner {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    transition: 75ms ease-in-out;
+    &,
+    &::before,
+    &::after {
+      position: absolute;
+      width: 28px;
+      height: 3px;
+      transition: transform .15s ease-in-out;
+      background-color: $ult-blue-100;
+    }
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+    }
+    &::before {
+      top: -7px;
+      transition: top 75ms ease-in-out .12s, opacity 75ms ease-in-out;
+    }
+    &::after {
+      bottom: -7px;
+      transition: bottom 75ms ease-in-out .12s, transform 75ms ease-in-out;
+    }
+  }
+}
+
+.is-active {
+  .hamburger {
+    &-inner {
+      background: transparent;
+      transition: background 75ms ease-in-out .12s;
+
+      &::before {
+        background-color: #fff;
+        top: 0;
+        transform: rotate(45deg);
+        transition: top 75ms ease-in-out, transform 75ms ease-in-out .12s;
+      }
+
+      &::after {
+        background-color: #fff;
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: top 75ms ease-in-out, transform 75ms ease-in-out .12s;
+      }
+
+    }
+  }
+}
+
+.title-component--mobile {
+  margin-bottom: 0;
+  height: inherit;
+  flex: 1;
+  text-align: center;
+}
+
+.is-open {
+  background-color: $ult-blue-100;
+  color: #fff;
+
+  /deep/ .title-component-wrap {
+    color: #fff;
+  }
+
+  .logo {
+    background-image: url('../../../assets/images/ult_logo_invers_sm.png');
+  }
+}
+
+
+
+/*styles for mobile version end*/

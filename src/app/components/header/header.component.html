@@ -1,0 +1,51 @@
+<header class="header" [ngClass]="{'login-page': !authService.isLogged}">
+
+  <div class="header--mobile" [ngClass]="statusClass" [class.is-open]="menuMobile">
+
+    <div class="hamburger" [ngClass]="{'is-active': menuMobile}" (click)="openMobileHeader()">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
+    </div>
+
+    <app-title-component class="title-component--mobile"></app-title-component>
+
+    <div class="logo"></div>
+
+  </div>
+
+  <nav class="nav" [ngClass]="{'nav--mobile': menuMobile}">
+
+    <div class="nav__item-wrap nav__client--mobile"><a href class="nav__item nav__client" (click)="onNavigate()">{{"Go to Client Portal" | translate}}</a></div>
+
+
+    <div class="nav__user--mobile">
+
+      <div ngbDropdown class="nav__item-wrap d-inline-block">
+        <a href id="dropdownBasic1" ngbDropdownToggle (click)="false" class="nav__item nav__language">{{lang | translate}}</a>
+        <div class="language-menu" aria-labelledby="dropdownBasic1">
+          <button *ngFor="let lang of supportedLangs" class="language-menu__item" (click)="onChangeLangHandler(lang)">{{lang | translate}}</button>
+        </div>
+      </div>
+
+      <div ngbDropdown class="nav__item-wrap d-inline-block" *ngIf="authService.isLogged">
+        <a href id="dropdownBasic2" ngbDropdownToggle (click)="false" class="nav__item nav__user ">{{'User' | translate}}</a>
+        <div class="user-menu" aria-labelledby="dropdownBasic2">
+          <button *ngFor="let item of userMenuItems" class="user-menu__item" (click)="onUserMenuClick(item)">{{item | translate}}</button>
+        </div>
+      </div>
+
+    </div>
+
+
+    <app-aside-nav (closeMobileMenu)="openMobileHeader()"></app-aside-nav>
+
+    <div class="nav__address">
+      <span class="nav__address-item">FIRE CS Version 0.1</span>
+      <span class="nav__address-item">&copy;&nbsp;ULT AG, L&ouml;bau, {{year}}</span>
+      <span class="nav__address-item"><a href="tel:+498008582400">+49 800 8582400</a></span>
+      <span class="nav__address-item"><a href="http://www.ult.de" target="blank_">www.ult.de</a></span>
+    </div>
+
+  </nav>
+</header>

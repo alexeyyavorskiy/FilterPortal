@@ -1,0 +1,47 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: block;
+}
+
+.filter {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+
+  &__title {
+    font-family:'corpid-heavy', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: $ult-blue-80;
+    width: 50%;
+    margin-right: 5px;
+  }
+
+  &__diagramm {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    transform-origin: top right;
+  }
+}
+
+#svg circle {
+  transition: stroke-dashoffset 1s linear;
+  stroke-width: 9;
+}
+
+.svg-value {
+  font-size: 21pt;
+  font-family: 'corpid-bold';
+}
+
+.svg-after {
+  font-size: 18pt;
+  font-family: 'corpid-regular';
+}

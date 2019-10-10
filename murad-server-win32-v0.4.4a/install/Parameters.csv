@@ -1,0 +1,31 @@
+Flow pressure min;2500
+Flow pressure max;2500
+Filter 1 maximum operation hours;0
+Filter 2 maximum operation hours;0
+Filter 3 maximum operation hours;0
+Maintenance interval in operation hours;0
+Maintenance interval in days;375
+Motor regulation, P;25000
+Motor regulation, I;25000
+Motor regulation, D;25000
+Filter 1, 80% pressure;1000
+Filter 1, 100% pressure;1000
+Filter 2, 80% pressure;1000
+Filter 2, 100% pressure;1000
+Filter 1, minimal pressure;1000
+Filter 2, minimal pressure;1000
+Pressure value for cleaning;1000
+Minimal motor power;50
+Maximal motor power;50
+Blower maximum operation hours;0
+Maximal device temperature;437
+Type of filter 1;0
+Type of filter 2;0
+Type of filter 3;0
+Coefficient of flow aperature;25000
+Cleaning mode;0
+Cleaning valve on time;250
+Cleaning valve interval time;15
+Hardware revision;4194303
+Firmware version;4194303
+Analog input enabled;0

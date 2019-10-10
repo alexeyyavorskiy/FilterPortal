@@ -1,0 +1,21 @@
+<section class="gas-filter">
+  <h2 class="gas-filter__title">{{"Gas Filter" | translate}}</h2>
+
+
+  <svg [ngStyle]="{'transform': 'scale(' + scale + ')'}" class="gas-filter__diagramm" id="svg" attr.width="{{size}}" attr.height="{{size}}" viewPort="0 0 55 55" version="1.1"
+       xmlns="http://www.w3.org/2000/svg">
+    <circle attr.r="{{r}}" attr.cx="{{size/2}}" attr.cy="{{size/2}}" fill="transparent" attr.stroke-dasharray="{{strokeDashArray}}" attr.stroke="{{color10}}" stroke-dashoffset="0"></circle>
+    <circle attr.transform="{{getTransformAttr()}}" class="bar" attr.r="{{r}}" attr.cx="{{size/2}}" attr.cy="{{size/2}}" attr.stroke="{{color40}}" fill="transparent"
+            attr.stroke-dasharray="{{strokeDashArray}}"
+            attr.stroke-dashoffset="{{strokeDashoffset}}"></circle>
+    <circle attr.r="{{r/1.315}}" attr.cx="{{size/2}}" attr.cy="{{size/2}}" attr.stroke="{{color100}}" attr.fill="{{color100}}"></circle>
+    <text fill="white">
+      <tspan x="52%" y="50%" class="svg-value" text-anchor="middle">{{hours}}</tspan>
+      <tspan class="svg-after">h</tspan>
+      <tspan x="50%" y="50%" class="svg-under" dy="1.5em" text-anchor="middle">of {{maxHours}} h
+      </tspan>
+    </text>
+  </svg>
+
+
+</section>

@@ -1,0 +1,143 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 240px;
+  overflow-y: auto;
+
+  @media screen and (max-width: $break_sm) {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  background-color: $ult-blue-20;
+  padding: 20px 30px 18px;
+  overflow-y: auto;
+
+  &::after, &::before {
+    content: '';
+    display: block;
+    height: 18px;
+    position: fixed;
+    left: 240px;
+    right: 30px;
+    background-color: $ult-blue-20;
+    z-index: 2;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  .scroll-top {
+    display: block;
+    margin: 30px auto 20px;
+    width: 40px;
+    height: 40px;
+    background-color: $ult-blue-80;
+    border-radius: 50%;
+    transition: background .3s ease;
+    text-align: center;
+    line-height: 35px;
+    font-size: 30px;
+    color: #fff;
+    display: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($ult-blue-80, .7);
+    }
+  }
+
+  .footer {
+    font-family: 'corpid-reg', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: $ult-blue-100;
+    margin-bottom: 20px;
+    display: none;
+  }
+
+
+  @media screen and (max-width: $break_md){
+    display: block;
+  }
+
+  @media screen and (max-width: $break_sm){
+    padding-left: 18px;
+    padding-right: 18px;
+
+    .title-component--desktop {
+      display: none;
+    }
+
+    .scroll-top,
+    .footer {
+      display: block;
+    }
+
+    &::after, &::before {
+      left: 18px;
+      right: 18px;
+    }
+
+    &::before {
+      top: 60px;
+    }
+
+  }
+}
+
+.login-page {
+  background-color: $ult-blue-100;
+  border-left: 1px solid #fff;
+
+  &::after, &::before {
+    display: none;
+  }
+
+  @media screen and (max-width: $break_sm) {
+    border-left: none;
+
+    .scroll-top,
+    .footer {
+      display: none;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: $break_sm) {
+  //STATUSES
+  .page-content--red {
+    &, &::after, &::before {
+      background-color: #ed90a1;
+    }
+  }
+
+  .page-content--yellow {
+    &, &::after, &::before {
+      background-color: #f7db7f;
+    }
+  }
+}

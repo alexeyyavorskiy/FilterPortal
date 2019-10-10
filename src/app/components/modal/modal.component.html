@@ -1,0 +1,14 @@
+<div class="mdl-body">
+  <div class="mdl-main">
+    <span class="mdl-main__items mdl-main__title">{{data.block | translate}}</span>
+    <app-i18-datepicker class="m-main__items" (date)="takeDate($event)"></app-i18-datepicker>
+  </div>
+  <div class="mdl-main" *ngIf="data.block === 'Filter changed on:'">
+    <span class="mdl-main__items mdl-main__title">{{'New Filter ID:' | translate}}</span>
+    <input class="mdl-main__items mdl-main__id" type="text" [(ngModel)]="newId" value="{{newId}}">
+  </div>
+</div>
+<div class="mdl-footer">
+  <button class="mdl-btn mdl-btn--save" type="button" (click)="saveData()">{{'Save edited values' | translate}}</button>
+  <button class="mdl-btn mdl-btn--cancel" type="button" (click)="close()">{{'Cancel editing' | translate}}</button>
+</div>

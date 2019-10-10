@@ -1,0 +1,5 @@
+<app-object-value [formGroup]="form" class="object-list" *ngFor="let object of objects" [object]="object" [parentName]="parentName" [form]="form" [editMode]="editMode"
+                  (edit)="edit($event)"></app-object-value>
+<div [ngClass]="{'hide': editMode}" *ngIf="params?.filterId">
+  <app-chart [colorClass]="headerClass" [value]="params.value" [filterId]="params.filterId"></app-chart>
+</div>

@@ -1,0 +1,182 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: block;
+
+}
+
+.parameter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 16px 20px;
+  height: 100%;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-family:'corpid-heavy', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 26px;
+    color: $ult-blue-80;
+    width: 50%;
+    margin-right: 5px;
+  }
+
+  &__filter {
+    width: 50%;
+    margin-left: 5px;
+    text-align: right;
+  }
+
+  &__form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  &__btn-wrapper {
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  &__btn {
+    display: inline-block;
+    background-color: $ult-blue-80;
+    color: #fff;
+    font-family:'corpid-reg', sans-serif;
+    font-size: 8pt;
+    line-height: 1.4;
+    padding: 4px 6px;
+    margin-bottom: 4px;
+    transition: background .3s ease;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba($ult-blue-80, .8)
+    }
+
+    &--period {
+      min-width: 50px;
+    }
+  }
+
+  &__edit-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__edit {
+    min-height: inherit;
+    width: calc(50% - 4px);
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    font-size: 12px;
+    font-family: 'corpid-reg';
+    font-weight: 400;
+    color: #fff;
+    transition: opacity .3s ease;
+
+    &::after {
+      font-family: 'font-awesome';
+      font-size: 16px;
+      vertical-align: middle;
+      padding-left: 10px;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &--save {
+      background-color: $green;
+      &::after {
+        content: '\f00c';
+      }
+    }
+
+    &--cancel {
+      background-color: $red;
+        &::after {
+        content: '\f00d';
+      }
+    }
+
+    &--disabled {
+      &, &:hover {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+.object-list {
+  margin-bottom: 30px;
+}
+
+.edit {
+  &--break-xs {
+    display: none;
+  }
+
+  @media screen and (max-width: $break_xs) {
+    &--break-xs {
+      display: inline;
+    }
+
+    &--all-screens {
+      display: none;
+    }
+  }
+}
+
+//statuses
+
+.parameter--green {
+  &::before {
+    background-color: $green;
+  }
+}
+
+.parameter--yellow {
+  &::before {
+    background-color: $yellow;
+  }
+}
+
+.parameter--red {
+  &::before {
+    background-color: $red;
+  }
+}
+
+.parameter--blue {
+  &::before {
+    background-color: $ult-blue-40;
+  }
+}

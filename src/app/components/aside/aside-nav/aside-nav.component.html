@@ -1,0 +1,13 @@
+<div class="aside__logo">
+  <img src="../../../assets/images/ult_logo_invers.png" alt="ULT" />
+</div>
+
+
+<nav class="aside__nav">
+  <ul class="menu">
+    <li class="menu__item"><a routerLink='dashboard' routerLinkActive="active" (click)="pressed()">{{'Dashboard' | translate}}</a></li>
+    <li class="menu__item"><a routerLink='parameter-list' routerLinkActive="active" (click)="pressed()">{{"Parameter List" | translate}}</a></li>
+    <li class="menu__item"><a routerLink='event-history' routerLinkActive="active" (click)="pressed()">{{"Event History" | translate}}</a></li>
+    <li class="menu__item"><a routerLink='edit-network' routerLinkActive="active" (click)="pressed()">{{"Edit Network" | translate}}</a></li>
+  </ul>
+</nav>

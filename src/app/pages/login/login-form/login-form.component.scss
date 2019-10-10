@@ -1,0 +1,131 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../../variables';
+@import '../../../smart-grid';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.logo {
+  @include col();
+  @include col-4();
+  @include col-lg-6();
+  @include col-md-8();
+  @include col-sm-10();
+  @include col-xs-12();
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  max-width: 360px;
+  max-height: 160px;
+  img {
+    width: 100%;
+  }
+}
+
+.form {
+  @include col();
+  @include col-4();
+  @include col-lg-6();
+  @include col-md-8();
+  @include col-sm-10();
+  @include col-xs-12();
+  margin: 90px auto 0;
+  padding-right: 10px;
+  padding-left: 10px;
+  max-width: 360px;
+  &__input,
+  &__btn,
+  &__label {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &__input {
+    background-color: $ult-blue-100;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    font-family: 'corpid-bold', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  ::-webkit-input-placeholder,
+  [placeholder] {
+    color: #fff;
+  }
+
+  &__arrow {
+    position: relative;
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      right: 5px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-top-color: #fff;
+    }
+  }
+
+  &__forgot {
+    display: block;
+    text-align: right;
+    color: $ult-blue-30;
+    font-size: .7em;
+    line-height: 1.5;
+    margin-top: 5px;
+    transition: color .3s ease;
+    &:hover,
+    &:focus {
+      color: $ult-blue-10;
+    }
+  }
+
+  &__btn {
+    background-color: $green;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'corpid-bold', sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.alert-danger {
+  background-color: transparent;
+  color: #fff;
+  font-family: 'corpid-reg', sans-serif;
+  font-size: 16px;
+}
+
+.control-group {
+  position: relative;
+}
+.input-error {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  font-style: italic;
+  color: rgba(#fff, .4) !important;;
+  font-size: 13px;
+  font-family: 'corpid-reg', sans-serif;
+  font-weight: 400;
+}

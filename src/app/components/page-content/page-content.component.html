@@ -1,0 +1,9 @@
+<div class="page-content" #top [ngClass]="statusClass" [class.login-page]="!authService.isLogged">
+  <app-header></app-header>
+  <app-title-component class="title-component--desktop"></app-title-component>
+  <router-outlet></router-outlet>
+
+  <button type="button" (click)="scrollTop(top)" class="scroll-top fa fa-angle-up"></button>
+  <div class="footer">&copy;&nbsp;ULT AG, L&ouml;bau, {{year}}</div>
+
+</div>

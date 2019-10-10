@@ -1,0 +1,52 @@
+<div class="event-history">
+
+  <div class="event-history__header">
+    <h2 class="event-history__title">{{'Event History' | translate}}</h2>
+
+    <a href="" (click)="downloadEvents()" class="event-history__btn">{{'Download log data' | translate}}</a>
+
+
+    <div ngbDropdown class="d-inline-block event-history__filter-wrap">
+      <a href id="dropdownBasic1" class="event-history__filter" ngbDropdownToggle (click)="false">{{currentEventType | translate}}</a>
+      <div class="filter-menu" ngbDropdownMenu>
+        <button class="dropdown-item filter-menu__item" *ngFor="let type of eventTypes" (click)="selectType(type)">{{type | translate}}</button>
+      </div>
+    </div>
+
+  </div>
+
+  <squeezebox>
+    <sb-item class="event-history__grouping" *ngIf="todayEvents" [collapsed]="collapsed" (onToggled)="itemWasToggled($event, 'today')">
+      <sb-item-head class="group-period">{{'today' | translate}}</sb-item-head>
+      <sb-item-body *ngIf="todayEvents">
+        <span style="opacity: 0; max-height: 0">fake text</span>
+        <app-event-item [event]="event" [warnType]="'warning'" *ngFor="let event of todayEvents"></app-event-item>
+      </sb-item-body>
+    </sb-item>
+
+    <sb-item class="event-history__grouping" *ngIf="weekEvents" [collapsed]="collapsed" (onToggled)="itemWasToggled($event, 'this week')">
+      <sb-item-head class="group-period">{{'this week' | translate}}</sb-item-head>
+      <sb-item-body *ngIf="weekEvents">
+        <span style="opacity: 0; max-height: 0">fake text</span>
+        <app-event-item [event]="event" [warnType]="'warning'" *ngFor="let event of weekEvents"></app-event-item>
+      </sb-item-body>
+    </sb-item>
+
+    <sb-item class="event-history__grouping" *ngIf="monthEvents" [collapsed]="collapsed" (onToggled)="itemWasToggled($event, 'this month')">
+      <sb-item-head class="group-period">{{'this month' | translate}}</sb-item-head>
+      <sb-item-body *ngIf="monthEvents">
+        <span style="opacity: 0; max-height: 0">fake text</span>
+        <app-event-item [event]="event" [warnType]="'warning'" *ngFor="let event of monthEvents"></app-event-item>
+      </sb-item-body>
+    </sb-item>
+
+    <sb-item class="event-history__grouping" *ngIf="olderEvents" [collapsed]="collapsed" (onToggled)="itemWasToggled($event, 'older')">
+      <sb-item-head class="group-period">{{'older' | translate}}</sb-item-head>
+      <sb-item-body *ngIf="olderEvents">
+        <span style="opacity: 0; max-height: 0">fake text</span>
+        <app-event-item [event]="event" [warnType]="'warning'" *ngFor="let event of olderEvents"></app-event-item>
+      </sb-item-body>
+    </sb-item>
+  </squeezebox>
+
+</div>

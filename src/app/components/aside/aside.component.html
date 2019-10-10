@@ -1,0 +1,12 @@
+
+<aside class="aside">
+  <app-aside-nav *ngIf="authService.isLoggedUser()"></app-aside-nav>
+
+
+  <div class="aside__address">
+    <span class="aside__address-item">FIRE CS Version 0.1</span>
+    <span class="aside__address-item">&copy;&nbsp;ULT AG, L&ouml;bau, {{year}}</span>
+    <span class="aside__address-item"><a href="tel:+498008582400">+49 800 8582400</a></span>
+    <span class="aside__address-item"><a href="http://www.ult.de" target="blank_">www.ult.de</a></span>
+  </div>
+</aside>

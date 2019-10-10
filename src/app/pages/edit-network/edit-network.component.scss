@@ -1,0 +1,64 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: flex;
+  position: absolute;
+  top: 128px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 30px 18px;
+
+  @media screen and (max-width: $break_sm) {
+    position: initial;
+    padding: 0;
+  }
+
+}
+
+.edit-network {
+  background-color: #fff;
+  width: 100%;
+  max-width: 960px;
+  height: 100%;
+  display: block;
+  overflow-y: auto;
+
+  /deep/.parameter__title {
+    width: 100%;
+    margin-right: 0;
+    line-height: 22px;
+
+  }
+
+  /deep/.parameter__title-wrapper {
+    margin-bottom: 22px;
+  }
+
+  /deep/.parameter__filter {
+    display: none;
+  }
+
+  /deep/ .object-list {
+    margin-bottom: 0;
+  }
+
+  /deep/.parameter {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  &__item {
+    width: 50%;
+  }
+
+  @media screen and (max-width: $break-md) {
+    &__item{
+      width: 100%;
+    }
+
+  }
+
+}

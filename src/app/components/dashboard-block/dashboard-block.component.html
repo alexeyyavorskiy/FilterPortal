@@ -1,0 +1,31 @@
+<section class="parameter" [ngClass]="headerClass">
+
+  <div class="parameter__title-wrapper">
+    <h2 class="parameter__title">{{params?.name | translate}}</h2>
+    <span class="parameter__filter" *ngIf="!editMode"><button type="button" class="parameter__btn" *ngIf="params?.replaceId"
+                                                              (click)="open(objects, 'Filter changed on:')">
+      {{"Register replaced filter" | translate}}</button></span>
+  </div>
+
+  <form class="parameter__form" [formGroup]="form" *ngIf="formDataLoaded">
+  <!--{{form.valid}}-->
+
+    <app-object-list [formGroup]="form" class="parameter__object" [objects]="objects" [editMode]="editMode" [parentName]="params?.name" [form]="form" [params]="params" (editList)="editList($event)"></app-object-list>
+
+    <div class="parameter__edit-wrapper" *ngIf="editMode">
+      <button class="parameter__edit parameter__edit--save" [ngClass]="{'parameter__edit--disabled': !form.valid}" [disabled]="!form.valid" type="button" (click)="save(form.value)"><span class="edit--all-screens">{{'Save edited values' | translate}}</span><span class="edit--break-xs">{{'Save' | translate}}</span></button>
+      <button class="parameter__edit parameter__edit--cancel" type="button" (click)="cancel()"><span class="edit--all-screens">{{'Cancel editing' | translate}}</span><span class="edit--break-xs">{{'Cancel' | translate}}</span></button>
+    </div>
+
+  </form>
+
+  <div class="parameter__btn-wrapper" *ngIf="params?.buttonGroup && !editMode">
+    <button type="button" class="parameter__btn" (click)="open(objects, 'Last service was performed:')">{{"Service performed" | translate}}</button>
+    <a href (click)="downloadEvents()" class="parameter__btn">{{"Download log data" | translate}}</a>
+    <a routerLink='/parameter-list' routerLinkActive="active" class="parameter__btn">{{"Parameter list" | translate}}</a>
+  </div>
+
+  <span class="parameter__period" *ngIf="!editMode"><button type="button" (click)="setDataPeriod()" class="parameter__btn parameter__btn--period" *ngIf="params?.filterId">
+      {{periodButtonText | translate}}</button></span>
+
+</section>

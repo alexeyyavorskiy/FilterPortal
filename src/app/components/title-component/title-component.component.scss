@@ -1,0 +1,47 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.title-component {
+
+  &-wrap {
+    color: $ult-blue-100;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  font-family: 'corpid-heavy', sans-serif;
+  line-height: 50px;
+}
+
+
+//statuses
+
+.title-component--green {
+  color: #fff;
+  background-color: $green;
+}
+
+
+.title-component--yellow {
+  color: #fff;
+  background-color: $yellow;
+}
+
+
+.title-component--red {
+  color: #fff;
+  background-color: $red;
+}
+
+
+.title-component--blue {
+  color: #fff;
+  background-color: $blue;
+}

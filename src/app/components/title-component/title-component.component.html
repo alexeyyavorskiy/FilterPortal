@@ -1,0 +1,9 @@
+<!-- add class into "title-component-wrap" to change status:
+title-component--green
+title-component--red
+title-component--yellow
+title-component--blue -->
+
+<div class="title-component-wrap" [ngClass]="titleClass"  *ngIf="authService.isLogged">
+  <span class="title-component">LAS 260 MD.20 FK</span>
+</div>

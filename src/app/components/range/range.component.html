@@ -1,0 +1,16 @@
+<section class="range" [ngClass]="{'range--disabled': !toggle}">
+
+
+  <h2 class="range__title">{{"Blower Remote" | translate}}</h2>
+
+
+  <div class="range__toggle">
+    <span class="range__toggle-value">{{(toggle ? 'On' : 'Off') | translate}}</span>
+    <mat-slide-toggle class="range__toggle-slide" (change)="changeToggle($event.checked)" [checked]="toggle" [disabled]="toggleDisabled"></mat-slide-toggle>
+  </div>
+
+
+  <mat-slider class="range__slider" [max]="max" [min]="min" [value]="value" (input)="changeEvent($event)" (change)="changeInput($event)" aria-label="slider" [disabled]="sliderDisabled"></mat-slider>
+  <span class="range__slider-value">{{value}}%</span>
+
+</section>

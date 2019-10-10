@@ -1,0 +1,53 @@
+<div class="object-row" [formGroup]="form"
+     [ngClass]="{'object-row--writable': editMode && object.writable && !focused, 'object-row--focused': editMode && object.writable && focused}">
+
+  <span class="object-row__title txt--hidden" title="{{object.id | translate}}">{{object.id | translate}}</span>
+
+  <span class="object-row__parameter"
+        *ngIf="object.data_type !== 'Boolean' && (!editMode || (editMode && !object.writable))">{{object.value}} {{object.unit | translate}}</span>
+
+
+  <div class="control-group" *ngIf="editMode && object.writable && object.data_type !== 'Boolean'">
+
+    <div class="error-messages">
+      <div *ngIf="form.controls[object.id].hasError('required') && !form.controls[object.id].valid && object.writable"
+           [ngClass]="{'error-messages__required--focused': editMode && object.writable && focused}"
+           class="error-messages__required">
+        {{'Value is required' | translate}} *
+      </div>
+      <div *ngIf="form.controls[object.id].hasError('min') && !form.controls[object.id].valid && object.writable"
+           [ngClass]="{'error-messages__required--focused': editMode && object.writable && focused}"
+           class="error-messages__required">
+        {{'min value is' | translate}} {{object.min_value}} *
+      </div>
+      <div *ngIf="form.controls[object.id].hasError('max') && !form.controls[object.id].valid && object.writable"
+           [ngClass]="{'error-messages__required--focused': editMode && object.writable && focused}"
+           class="error-messages__required">
+        {{'max value is' | translate}} {{object.max_value}} *
+      </div>
+      <div *ngIf="form.controls[object.id].hasError('pattern') && !form.controls[object.id].valid && object.writable"
+           [ngClass]="{'error-messages__required--focused': editMode && object.writable && focused}"
+           class="error-messages__required">
+        {{'value must be digit' | translate}} *
+      </div>
+    </div>
+
+    <input class="object-row__value"
+           (focus)="focusFunction()" (focusout)="focusOutFunction()"
+           [ngClass]="{'value--writable': editMode && object.writable && !focused, 'value--focused': editMode && object.writable && focused}"
+           [(ngModel)]="object.value"
+           *ngIf="editMode && object.writable"
+           [formControl]="form.controls[object.id]" autocomplete="off">
+
+  </div>
+
+  <span class="object-row__edit" *ngIf="!editMode"><a href (click)="onEdit(); false"
+                                                      [ngClass]="{'fa fa-pencil' : object.writable}"
+                                                      aria-hidden="true"></a></span>
+  <div class="object-row__slide" [ngClass]="object.writable && editMode ? 'object-row__slide' : 'object-row__slide--disabled'">
+    <mat-slide-toggle *ngIf="object.data_type === 'Boolean'" (change)="setBooleanFormControlValue($event.checked)"
+                      class="range__toggle-slide" [checked]="object.value" [disabled]="!(object.writable && editMode)"
+                      [ngStyle]="{'transform': 'scale(.7)'}"></mat-slide-toggle>
+  </div>
+
+</div>

@@ -1,0 +1,147 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: block;
+}
+
+.parameter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 100%;
+  position: relative;
+
+  &__title {
+    font-family:'corpid-heavy', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 26px;
+    color: $ult-blue-80;
+    margin-right: 5px;
+    margin-bottom: 20px;
+  }
+
+  &__filter {
+    width: 50%;
+    margin-left: 5px;
+    text-align: right;
+  }
+
+  &__form {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  &__list {
+    width: 50%;
+    background-color: white;
+    padding: 16px 20px;
+  }
+
+  &__object {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: $break_md) {
+    &__list {
+      width: 100%;
+    }
+  }
+
+}
+
+
+.edit {
+  min-height: inherit;
+  width: calc(50% - 4px);
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  font-size: 12px;
+  font-family: 'corpid-reg';
+  font-weight: 400;
+  color: #fff;
+  transition: opacity .3s ease;
+
+
+  &::after {
+    font-family: 'font-awesome';
+    font-size: 16px;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &--save {
+    background-color: $green;
+    &::after {
+      content: '\f00c';
+    }
+  }
+
+  &--cancel {
+    background-color: $red;
+    &::after {
+      content: '\f00d';
+    }
+  }
+
+  &--disabled {
+    &, &:hover {
+      opacity: .5;
+    }
+  }
+
+  &--break-xs {
+    display: none;
+  }
+
+  @media screen and (max-width: $break_xs) {
+    &--break-xs {
+      display: inline;
+    }
+
+    &--all-screens {
+      display: none;
+    }
+  }
+
+  &-wrapper {
+
+    &--outer {
+      position: sticky;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      box-shadow: 0 -7px 32px rgba($ult-blue-100, .3);
+      background-color: #fff;
+    }
+
+    &--inner {
+      width: 50%;
+      padding: 16px 20px;
+      margin-left: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: $break_md) {
+      &--inner {
+        width: 100%;
+      }
+    }
+  }
+}
+
+

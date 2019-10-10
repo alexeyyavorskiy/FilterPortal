@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~squeezebox/styles.css';
+
+
+@font-face {
+  font-family: "corpid-reg";
+  src: url("/assets/fonts/corpid_regular.otf");
+}
+
+@font-face {
+  font-family: "corpid-heavy";
+  src: url("/assets/fonts/corpid_heavy.otf");
+}
+
+@font-face {
+  font-family: "corpid-bold";
+  src: url("/assets/fonts/corpid_bold.otf");
+}
+
+@font-face {
+  font-family: "font-awesome";
+  src: url("../node_modules/font-awesome/fonts/FontAwesome.otf");
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  background-color: #fff;
+}
+
+body {
+	margin: 0 auto;
+	min-width: 320px;
+	font-family: 'corpid-reg', sans-serif;
+	font-size: 16px;
+	line-height: 1.2;
+}
+
+html, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, img, address, label {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, img {
+	display: block;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+  color: inherit;
+	text-decoration: none;
+}
+
+ul, li {
+	list-style: none;
+}
+
+.error {
+  color: #B85C5C !important;
+  font-weight: bold;
+}
+.mat-slider-horizontal {
+	width: 200px;
+}
+.mat-slider-thumb, .mat-slider-thumb:active, .mat-slide-toggle-thumb {
+	background: #004487 !important;
+	cursor: auto !important;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+	background-color: rgba(0, 68, 135, 0.46);
+}

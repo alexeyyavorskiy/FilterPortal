@@ -1,0 +1,9 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100vh;
+}

@@ -1,0 +1,21 @@
+<section class="parameter">
+
+  <form class="parameter__form" [formGroup]="form" *ngIf="formDataLoaded">
+
+    <div class="parameter__list" *ngFor="let object of objects">
+      <h2 class="parameter__title">{{object?.name | translate}}</h2>
+      <app-object-list class="parameter__object" [objects]="object?.objects" [editMode]="editMode" [parentName]="object?.name" [form]="form" (editList)="editList($event)"></app-object-list>
+    </div>
+    <div class="parameter__list">
+      <app-object-list class="parameter__object"></app-object-list>
+    </div>
+
+    <div class="edit-wrapper--outer" *ngIf="editMode">
+      <div class="edit-wrapper--inner">
+        <button class="edit edit--save" type="button" [disabled]="!form.valid" (click)="save(form.value)" [ngClass]="{'edit--disabled': !form.valid}"><span class="edit--all-screens">{{'Save edited values' | translate}}</span><span class="edit--break-xs">{{'Save' | translate}}</span></button>
+        <button class="edit edit--cancel" type="button" (click)="cancel()"><span class="edit--all-screens">{{'Cancel editing' | translate}}</span><span class="edit--break-xs">{{'Cancel' | translate}}</span></button>
+      </div>
+    </div>
+  </form>
+
+</section>

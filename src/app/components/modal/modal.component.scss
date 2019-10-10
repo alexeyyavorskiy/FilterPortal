@@ -1,0 +1,129 @@
+@import '~bourbon/app/assets/stylesheets/_bourbon';
+@import '../../variables';
+@import '../../smart-grid';
+
+::ng-deep .modal-backdrop  {
+  background-color: $ult-blue-100;
+}
+
+::ng-deep .modal {
+  display: flex !important;
+
+  &-dialog {
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+
+    @media screen and (max-width: $break-xs) {
+      margin-left: 18px;
+      margin-right: 18px;
+    }
+  }
+
+  &-content {
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    padding: 15px 20px;
+  }
+}
+
+.mdl {
+  &-body {
+    margin-bottom: 20px;
+    font-family: 'corpid-reg';
+  }
+
+  &-main,
+  &-footer {
+    min-height: 40px;
+  }
+
+  &-main {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    background-color: $ult-blue-15;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__items {
+      width: calc(50% - 4px);
+      @media screen and (max-width: $break-xs) {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      font-size: 16px;
+      color: $ult-blue-100;
+    }
+
+    &__id {
+      background-color: transparent;
+      border: 0;
+      outline: none;
+      color: $ult-blue-100;
+      font-size: 24px;
+      font-family: 'corpid-bold';
+      @media screen and (max-width: $break-xs) {
+        text-align: right;
+      }
+    }
+
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &-btn {
+    min-height: inherit;
+    width: calc(50% - 4px);
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    font-family: 'corpid-reg';
+    font-weight: 400;
+    color: #fff;
+    transition: opacity .3s ease;
+
+    &::after {
+      font-family: 'font-awesome';
+      font-size: 20px;
+      vertical-align: middle;
+      padding-left: 10px;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &--save {
+      background-color: $green;
+      &::after {
+        content: '\f00c';
+      }
+    }
+
+    &--cancel {
+      background-color: $red;
+        &::after {
+        content: '\f00d';
+      }
+    }
+
+   @media screen and (max-width: $break-xs) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+   }
+  }
+}

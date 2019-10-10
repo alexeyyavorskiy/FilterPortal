@@ -1,0 +1,9 @@
+{
+  "serverUrl" : "http://localhost:5080/rpc",
+  "files": [
+    "Events.csv",
+    "Parameters.csv",
+    "LongTermDataValues.csv",
+    "ShortTermDataValues.csv"
+  ]
+}

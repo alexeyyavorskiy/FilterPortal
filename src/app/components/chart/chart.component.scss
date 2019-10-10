@@ -1,0 +1,44 @@
+@import '../../variables';
+
+:host {
+  display: block;
+  flex: 1;
+  .object-chart {
+    margin-top: 20px;
+    height: 150px;
+  }
+}
+
+.chart-status {
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+
+  &--warning {
+    &::after {
+      content: '\F071';
+      font-family: 'font-awesome';
+      display: inline-block;
+      vertical-align: middle;
+      color: #fff;
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  }
+}
+
+.parameter--green {
+  background-color: $green;
+}
+
+.parameter--yellow {
+  background-color: $yellow;
+}
+
+.parameter--red {
+  background-color: $red;
+}
+
+.parameter--blue {
+  background-color: $ult-blue-40;
+}
